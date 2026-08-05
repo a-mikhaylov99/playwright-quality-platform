@@ -1,6 +1,6 @@
-import 'dotenv/config';
-
 import { defineConfig, devices } from '@playwright/test';
+
+import { environment } from './src/config/environment';
 
 export default defineConfig({
   testDir: './tests',
@@ -13,13 +13,11 @@ export default defineConfig({
   reporter: [['list'], ['html', { open: 'never' }]],
 
   use: {
-    baseURL: process.env.BASE_URL,
-
+    baseURL: environment.baseUrl,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-
-    actionTimeout: 10_000,
+    actionTimeout: environment.defaultTimeoutMs,
     navigationTimeout: 20_000,
   },
 

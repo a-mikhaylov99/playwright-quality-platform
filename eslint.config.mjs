@@ -18,10 +18,7 @@ export default tseslint.config(
   {
     files: ['**/*.ts'],
 
-    extends: [
-      ...tseslint.configs.recommendedTypeChecked,
-      ...tseslint.configs.stylisticTypeChecked,
-    ],
+    extends: [...tseslint.configs.recommendedTypeChecked, ...tseslint.configs.stylisticTypeChecked],
 
     languageOptions: {
       parserOptions: {
