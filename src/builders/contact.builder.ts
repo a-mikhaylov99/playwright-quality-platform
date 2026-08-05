@@ -3,30 +3,28 @@ import { Contact } from "../api/models";
 import { BaseBuilder } from "./base.builder";
 
 export class ContactBuilder extends BaseBuilder<Contact> {
-    private contact: Contact;
-
     constructor() {
         super();
-        this.contact = ContactBuilder.createDefaultContact();
+        this.data = ContactBuilder.createDefaultContact();
     }
 
     public withFirstName(firstName: string): this {
-        this.contact.firstName = firstName;
+        this.data.firstName = firstName;
         return this;
     }
 
     public withLastName(lastName: string): this {
-        this.contact.lastName = lastName;
+        this.data.lastName = lastName;
         return this;
     }
 
     public withEmail(email: string): this {
-        this.contact.email = email;
+        this.data.email = email;
         return this;
     }
 
     public withPhone(phone: string): this {
-        this.contact.phone = phone;
+        this.data.phone = phone;
         return this;
     }
 
